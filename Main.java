@@ -3,9 +3,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 
-public class Main  {
-    public static void main(String[] args) {
-      public static void saveUrl(final String filename, final String urlString) throws IOException {
+public class Main {
+    public static void saveUrl(final String filename, final String urlString) throws IOException {
         BufferedInputStream in = null;
         FileOutputStream fout = null;
         try {
@@ -22,7 +21,9 @@ public class Main  {
             if (fout != null) fout.close();
         }
     }
-        String urlString = "https://cdnproxy3.mp3xa.me/1XhT3tDzQ-ETJK-Urb29hw/1793398782/L21wMy8yMDIwLzAyL9Cd0LXRgNCy0YsgLSDQndC10YDQstGLLm1wMw";
+
+    public static void main(String[] args) {
+        String urlString = "https://nmuz.net/load/1e25cd9be70f477d.mp3"; // прямая ссылка на mp3-файл
         String filename = "song.mp3";
         Thread downloadThread = new Thread(new Runnable() {
             @Override
@@ -31,7 +32,7 @@ public class Main  {
                 try {
                     saveUrl(filename, urlString);
                     System.out.println("Скачивание завершено");
-                } 
+                }
                 catch (IOException ex) {
                     System.out.println("Ошибка при скачивании: " + ex.getMessage());
                 }
